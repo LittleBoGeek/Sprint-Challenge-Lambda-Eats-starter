@@ -28,11 +28,11 @@ const MyForm = ({errors, status,touched, values}) => {
         )}
     </label>
 <h2> Please select a size:</h2>
-    <select>
-  <option value="grapefruit">small</option>
-  <option value="lime">medium</option>
-  <option selected value="coconut">large</option>
-  <option value="mango">xl</option>
+    <select onChange={`getSelectedValue()`}>
+  <option value="small">small</option>
+  <option value="med">medium</option>
+  <option selected value="large">large</option>
+  <option value="xl">xl</option>
 </select>
 <h2> Please select toppings
 </h2>
@@ -90,6 +90,9 @@ const MyForm = ({errors, status,touched, values}) => {
         <button type = "submit">Submit</button>
 
 </Form>
+
+
+
 {users.map(user =>{
     return(
     <ul key = {user.id}>
@@ -132,6 +135,13 @@ validationSchema: Yup.object().shape({
       .catch(err => console.log(err.response));
   }
 })(MyForm);
+
+function getSelectValue()
+{
+    var selectedValue = document.getElementById("list").value;
+    console.log(selectedValue);
+}
+getSelectValue();
 
 export default FormikMyForm;  
 
