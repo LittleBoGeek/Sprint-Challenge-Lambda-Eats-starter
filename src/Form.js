@@ -16,8 +16,7 @@ const MyForm = ({errors, status,touched, values}) => {
 <Form>
 
     <label htmlFor = "name">
-        Name
-        <Field
+        Name: <Field
         id = "name"
         type = "text"
         name = "name"
@@ -28,20 +27,21 @@ const MyForm = ({errors, status,touched, values}) => {
             <p> {errors.name}</p>
         )}
     </label>
-
+<h2> Please select a size:</h2>
     <select>
   <option value="grapefruit">small</option>
   <option value="lime">medium</option>
   <option selected value="coconut">large</option>
   <option value="mango">xl</option>
 </select>
-
+<h2> Please select toppings
+</h2>
     <label className="checkbox-container">
         Pepperoni
         <Field
           type="checkbox"
-          name="tos"
-          checked={values.tos}
+          name="opt"
+          checked={false}
         />
         <span className="checkmark" />
       </label>  
@@ -49,8 +49,8 @@ const MyForm = ({errors, status,touched, values}) => {
         Anchovies
         <Field
           type="checkbox"
-          name="tos"
-          checked={values.tos}
+          name="opt"
+          checked={false}
         />
         <span className="checkmark" />
       </label>  
@@ -58,8 +58,8 @@ const MyForm = ({errors, status,touched, values}) => {
         Pineapple 
         <Field
           type="checkbox"
-          name="tos"
-          checked={values.tos}
+          name="opt"
+          checked={false}
         />
         <span className="checkmark" />
       </label>  
@@ -68,13 +68,13 @@ const MyForm = ({errors, status,touched, values}) => {
        Ham
         <Field
           type="checkbox"
-          name="tos"
-          checked={values.tos}
+          name="opt"
+          checked={false}
         />
         <span className="checkmark" />
       </label>
       <label htmlFor = "specialInstructions">
-        Name
+      <h2> Use this box to add any special instructions </h2>
         <Field
         id = "name"
         type = "text"
@@ -93,10 +93,9 @@ const MyForm = ({errors, status,touched, values}) => {
 {users.map(user =>{
     return(
     <ul key = {user.id}>
-        <li> name:{user.name}</li>
-        
-
-    </ul>
+        <li> name: {user.name} </li>
+        <li> {user.specIn}</li>
+     </ul>
     );
 })}
 </div>

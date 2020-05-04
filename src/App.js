@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <h1>Lambda Eats</h1>
       <div className="header">Header</div>
-      <Link to="/pizza"> Order Pizza </Link>
+       <Link to="/pizza"> Order Pizza </Link> 
       <Route exact path="/pizza" component={Form}/>
     </div>
   );
